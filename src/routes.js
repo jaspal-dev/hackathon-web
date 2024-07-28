@@ -1,4 +1,5 @@
 import { Signup } from "./pages/signup";
+import { AddFlight } from "./pages/add-flight";
 import { OTPVerification } from "./pages/otp-verification";
 import { Login } from "./pages/login";
 import { Logout } from "./pages/logout";
@@ -48,6 +49,14 @@ export const routes = [
         element: (
           <AuthGaurd>
             <OTPVerification />
+          </AuthGaurd>
+        ),
+      },
+      {
+        path: "add-flight",
+        element: (
+          <AuthGaurd>
+            <AddFlight />
           </AuthGaurd>
         ),
       },

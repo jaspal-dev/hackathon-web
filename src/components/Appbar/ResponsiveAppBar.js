@@ -27,7 +27,7 @@ const pages = [
   },
   {
     name: "Add Flight",
-    link: "Add Flight",
+    link: "add-flight",
     isPrivate: true,
   },
   {
@@ -120,12 +120,16 @@ function ResponsiveAppBar() {
                 }}
               >
                 {pages
-                  .filter(
-                    (page) =>
-                      page.isPrivate === !!user &&
-                      user?.isEmailVerified &&
-                      user?.isPhoneNumberVerified
-                  )
+                  .filter((page) => {
+                    if (user) {
+                      return (
+                        page.isPrivate &&
+                        user?.isEmailVerified &&
+                        user?.isPhoneNumberVerified
+                      );
+                    }
+                    return !page.isPrivate;
+                  })
                   .map((page) => (
                     <MenuItem
                       key={page.name}
@@ -157,12 +161,16 @@ function ResponsiveAppBar() {
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
               {pages
-                .filter(
-                  (page) =>
-                    page.isPrivate === !!user &&
-                    user?.isEmailVerified &&
-                    user?.isPhoneNumberVerified
-                )
+                .filter((page) => {
+                  if (user) {
+                    return (
+                      page.isPrivate &&
+                      user?.isEmailVerified &&
+                      user?.isPhoneNumberVerified
+                    );
+                  }
+                  return !page.isPrivate;
+                })
                 .map((page) => (
                   <Button
                     key={page.name}

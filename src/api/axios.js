@@ -15,4 +15,18 @@ axiosInstance.interceptors.request.use(
   }
 );
 
+axiosInstance.interceptors.response.use(
+  function (response) {
+    return response;
+  },
+  function (error) {
+    if (error.response.status === 401) {
+      localStorage.removeItem("authorization");
+      localStorage.removeItem("user");
+      window.location.reload();
+    }
+    return Promise.reject(error);
+  }
+);
+
 export default axiosInstance;

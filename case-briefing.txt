@@ -1,0 +1,32 @@
+Project Case Briefing
+
+Project Title: Flight Management System
+
+Overview:
+The Flight Management System (FMS) is a comprehensive platform designed for Flight Coordinators to manage flight schedules, update flight statuses, and handle passenger ticketing efficiently. The system ensures seamless communication with passengers through real-time notifications.
+
+Key Features:
+
+Flight Coordinator Registration:
+
+Flight Coordinators can sign up using their phone number and email.
+OTP verification is required for both phone and email to ensure security and authenticity.
+Flight Management:
+
+Flight Coordinators can add new flight details, update existing flight information, and manage schedules.
+The system allows for real-time updates, ensuring that all data is current and accurate.
+Passenger Ticketing:
+
+Coordinators can add passenger tickets, requiring the passenger's phone number and email.
+Notifications:
+
+When flight statuses are updated, passengers receive immediate notifications via SMS and email.
+Security and Verification:
+
+OTP verification for both phone and email is implemented to protect the integrity of the Flight Coordinator's account.
+Benefits:
+
+For Flight Coordinators: Simplifies the process of managing flights and passenger information, saving time and reducing errors.
+For Passengers: Provides timely updates on flight statuses, ensuring a smooth and informed travel experience.
+Conclusion:
+The Flight Management System offers a robust solution for managing flights and passenger information.

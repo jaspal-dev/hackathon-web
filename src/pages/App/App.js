@@ -1,6 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { routes } from "./../../routes";
-import { ResponsiveAppBar } from "../../components/Appbar";
 import { Bounce, ToastContainer } from "react-toastify";
 
 const router = createBrowserRouter(routes);

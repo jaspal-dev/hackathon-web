@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:3000",
+  baseURL: process.env.REACT_APP_BASE_URL,
 });
 
 axiosInstance.interceptors.request.use(
@@ -20,7 +20,10 @@ axiosInstance.interceptors.response.use(
     return response;
   },
   function (error) {
-    if (error.response.status === 401) {
+    if (
+      error.response.status === 401 &&
+      error?.response?.config?.url !== "v1/auth/login"
+    ) {
       localStorage.removeItem("authorization");
       localStorage.removeItem("user");
       window.location.reload();

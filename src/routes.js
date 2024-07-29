@@ -1,11 +1,14 @@
 import { Signup } from "./pages/signup";
-import { AddFlight } from "./pages/add-flight";
+import { Flight } from "./pages/flight";
 import { OTPVerification } from "./pages/otp-verification";
 import { Login } from "./pages/login";
 import { Logout } from "./pages/logout";
 import { AuthGaurd } from "./components/AuthGaurd";
 import { PublicRoute } from "./components/PublicRoute";
 import { ResponsiveAppBar } from "./components/Appbar";
+import { ListFlight } from "./pages/list-flight";
+import { Passenger } from "./pages/passenger";
+import { Welcome } from "./pages/Welcome";
 
 export const routes = [
   {
@@ -16,7 +19,7 @@ export const routes = [
         path: "/",
         element: (
           <AuthGaurd>
-            <div>Logged IN</div>
+            <Welcome />
           </AuthGaurd>
         ),
       },
@@ -53,10 +56,26 @@ export const routes = [
         ),
       },
       {
-        path: "add-flight",
+        path: "flight",
         element: (
           <AuthGaurd>
-            <AddFlight />
+            <Flight />
+          </AuthGaurd>
+        ),
+      },
+      {
+        path: "passenger",
+        element: (
+          <AuthGaurd>
+            <Passenger />
+          </AuthGaurd>
+        ),
+      },
+      {
+        path: "list-flight",
+        element: (
+          <AuthGaurd>
+            <ListFlight />
           </AuthGaurd>
         ),
       },
